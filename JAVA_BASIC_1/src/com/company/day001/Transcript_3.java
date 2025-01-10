@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class Transcript_3 {
 	public static void main(String[] args) {
 		int kor=0,eng=0,math=0, total=0;
+		String num="";
 		float avg =0.0f;
 		String level ="";
 		
 		Scanner sc= new Scanner(System.in);
+		System.out.println("학번 입력"); num = sc.next();
 		System.out.println("국어점수 입력"); kor = sc.nextInt();
 			
 				
@@ -25,8 +27,8 @@ public class Transcript_3 {
 		
 		total = kor+math+eng;
 		avg = total/3.3f;
-		System.out.println("국어\t영어\t수학\t총점\t레벨\t평균");
-		System.out.println(kor+"\t"+eng+"\t"+math+"\t"+total+"\t"+"Lv"+(int)avg/10+"\t"+avg);	
+		System.out.println("학번\t국어\t영어\t수학\t총점\t레벨\t평균");
+		System.out.println(num+"\t"+kor+"\t"+eng+"\t"+math+"\t"+total+"\t"+"Lv"+(int)avg/10+"\t"+avg);	
 		
 	}
 
