@@ -1,4 +1,5 @@
 package com.company.day003_reapeat;
+// 무한반복을 이용해서 메뉴판 실행
 import java.util.Scanner;
 
 public class Bank {
@@ -12,7 +13,7 @@ public class Bank {
 		System.out.println("입력 >> ");
 		int i = sc.nextInt();
 		if(i==9) {
-			System.out.println("종료");
+			System.out.println("종료기능입니다");
 			run = false;
 		}
 		else if(i==1) {
@@ -34,16 +35,23 @@ public class Bank {
 			System.out.println("다시 확인해주세요");
 		}
 		else if(i==3) {
+			String id = sc.next();
+			String pw = sc.next();
 			System.out.println("==입금완료");
 		}
 		
 		else if(i==4) {
+			String id = sc.next();
+			String pw = sc.next();
 			System.out.println("==출금완료");
 		}
 		
 		else if(i==5) {
+			String id = sc.next();
+			String pw = sc.next();
 			System.out.println("계좌를 삭제하시겠습니까?");
 		}
+		
 		
 	  }
    }
