@@ -31,26 +31,48 @@ public class Bank_v2 {
 				System.out.print("잔액 입력 : ");
 				balance = sc.nextInt();
 				
-			 		}else if(menu==9) {System.out.println("종료기능입니다"); break;}
-			 		else {
+			 }else if(menu==9) {System.out.println("종료기능입니다"); break;}
+			  else {
 			 			// 사용자정보조회
-			 			System.out.print("아이디 입력 : "); 
-			 			String id2 = sc.next();// id: 입력받기
+			 	System.out.print("아이디 입력 : "); 
+			 	String id2 = sc.next();// id: 입력받기
 			 			
-			 			System.out.print("비밀번호 입력 : ");
-						 String pw2 = sc.next();// pass: 입력받기
+			 	System.out.print("비밀번호 입력 : ");
+				String pw2 = sc.next();// pass: 입력받기
 						 
 						// 다시 확인해주세요 (추가기능에서 입력받은 아이디와 비번이 임시로 입력받은 아이디와 패스가 다르다면)
-						 if( !(id.equals(id2) && pw.equals(pw2)) ) {
-							 System.out.println("다시 확인해주세요"); continue; // 아래 진행 스킵
-						 }			 			
+			if( !(id.equals(id2) && pw.equals(pw2)) ) {
+				System.out.println("다시 확인해주세요"); continue; // 아래 진행 스킵
+			}			 			
 			 			
 			 			
 			 			switch(menu) {
-			 			case 2: System.out.println("\n\n2. 조회기능입니다"); break;
-			 			case 3: System.out.println("\n\n3. 입금기능입니다"); break;
-			 			case 4: System.out.println("\n\n4. 출금기능입니다"); break;
-			 			case 5: System.out.println("\n\n5. 삭제기능입니다"); break;
+			 			case 2: System.out.println("\n\n2. 조회기능입니다"); //해당 정보출력
+			 				 System.out.println("id: " + id); // ID : a
+			 				 System.out.println("pass: " + pw); // PASS : a			 				
+			 				 System.out.println("잔액: " + balance); // 잔액 : 1
+			 			break; // 조회기능
+			 			case 3: {System.out.println("\n\n3. 입금기능입니다"); 
+			 				  System.out.print("입금 > "); int temp = sc.nextInt();// 입금 : 돈입력
+			 				  System.out.println("==입금완료");
+			 				  System.out.println("잔액 : " + (balance+=temp));// 잔액:__계산된 값			 				  
+			 			}break;			 			
+			 			case 4: {System.out.println("\n\n4. 출금기능입니다");
+			 					System.out.print("출금 > "); int temp = sc.nextInt(); // 출금 : 돈입력
+			 					System.out.println("==출금완료");
+			 					System.out.println("잔액 : " + (balance-=temp)); // 잔액:__계산된 값	
+			 			
+			 			}break;			 			
+			 			case 5: System.out.println("\n\n5. 삭제기능입니다"); 
+			 					System.out.println("삭제하시겠습니까? y|n");
+			 					String answer = sc.next();
+			 					if(answer.toLowerCase().equals("y")) { //입력받은 값이 소문자로 변경 y라면
+			 						id="";
+			 						pw="";
+			 						balance=0;
+			 					}
+			 			break;
+			 			
 			 			}
 			 		}
 					

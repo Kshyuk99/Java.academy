@@ -84,11 +84,7 @@ public class Bank2 {
 					System.out.println("==출금완료");
 				}
 				
-				else if(menu==5) {
-					 id = sc.next();
-					 pw = sc.next();
-					System.out.println("계좌를 삭제하시겠습니까?");
-				}
+				
 				
 		}
 		
