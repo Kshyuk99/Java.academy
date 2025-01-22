@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class WhiskeyRecommendation {
+	
 
     private String[] flavors = {
         "부드러운", "풍부한", "진한", "달콤한", "바닐라향", "흙향", "과일향", "꽃향", "나무향", "스파이시"
@@ -31,7 +32,7 @@ public class WhiskeyRecommendation {
         }
 
         if (flavorIndex == -1) {
-            return "해당 맛의 위스키 정보가 없습니다.";
+            return "죄송합니다. 해당 성향의 Whiskey 추천을 찾을 수 없습니다.";
         }
 
         String[] whiskeys = whiskeyRecommendations[flavorIndex];
@@ -47,9 +48,12 @@ public class WhiskeyRecommendation {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("어떤 맛의 위스키를 찾으시나요?");
-        System.out.println("다음 중에서 선택해주세요:");
+        System.out.println("다음 중에서 선택해주세요:");        
+		
+		
         for (String flavor : whiskeyRecommender.flavors) {
             System.out.print(flavor + " ");
+            
         }
         System.out.println();
 
