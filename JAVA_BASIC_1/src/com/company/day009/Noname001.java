@@ -8,11 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 //1. 클래스는 부품객체
 //2. 조립
-class MyView2{  //클릭이벤트 #1
+class MyView implements ActionListener{  //클릭이벤트 #1
 	//멤버변수 (frame / button)
 	JFrame frame;  JButton button;  // 부품 new 생성자
 	//멤버함수
-	public MyView2() {
+	public MyView() {
 		this.frame  = new JFrame("box");
 		this.button = new JButton("btn");
 	
@@ -24,20 +24,18 @@ class MyView2{  //클릭이벤트 #1
 		frame.setSize(300, 300);
 		//2-3. frame.setVisible()
 		frame.setVisible(true);	
-		button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "click");				
-			}//2) 한번쓰고 버릴목적
-			//3) new 인터페이스명(){implements 구현 메서드}			
-		}); //#3 이벤트걸기
+		button.addActionListener(this); //#3 이벤트걸기
 	}
-	
+	@Override
+	public void actionPerformed(ActionEvent e) { //#2
+		JOptionPane.showMessageDialog(null, "click했어요");
+		
+	}
 }
 
-public class Gui001_1 {
+public class Noname001 {
 	public static void main(String[] args) {
-		new MyView2().create();
+		new MyView().create();
 	}
 
 }
