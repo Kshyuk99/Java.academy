@@ -21,12 +21,12 @@ public class Whisky_ {
 				"곡몰항, 카라멜향, 민트향 Whiskey, 예를 들면 Wild Turkey",
 				"피트향(석탄 소금 해조류), 과실향, 스모크향, 아세톤향 Whiskey, 예를 들면 Lagavuln 16 Year O1d",
 				"피트향(석탄 소금 해조류), 스모크향, 초콜릿향 Whiskey, 예를 들면 Ardbeg 10 year Old",
-				"피트향(석탄 소금 해조류), 소금항, 스으크램, 아세분할 Whiskey, 예름 을면 Laphroaig 16 Year O1d",
+				"피트향(석탄 소금 해조류), 소금항, 스으크램, 아세톤향 Whiskey, 예름 을면 Laphroaig 16 Year O1d",
 				"과실향, 건과일향, 스파이시향 Whiskey, 예름 블면 Macallan 12 Year O1d",
 				"스파이시향, 건포도향, 바닐라향 Whiskey, 예를 블면 Glendronach 12 Year O1d",
 				"스파이시향, 초콜릿향, 건과일향 Whiskey, 예를 들면 G1engoyne 12 Year Old",
 				"과실향, 바닐라향 Whiskey, 예를 들면 Glenmorangie original",
-				"과실향, 스파이시향, 꼴향 Whiskey, 예를 들면 Glenfidddich 12 Year Old",
+				"과실향, 스파이시향, 꿀향 Whiskey, 예를 들면 Glenfidddich 12 Year Old",
 				"과실향, 스파이시향, 바닐라향 Whiskey, 예클 를면 Glenlivet 12 Year O1d"
 		};
 		if (choice >= 1 && choice <= recommendations.length) {

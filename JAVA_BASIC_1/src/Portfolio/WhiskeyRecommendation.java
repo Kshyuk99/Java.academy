@@ -6,20 +6,31 @@ public class WhiskeyRecommendation {
 	
 
     private String[] flavors = {
-        "부드러운", "풍부한", "진한", "달콤한", "바닐라향", "흙향", "과일향", "꽃향", "나무향", "스파이시"
+        "부드러운", "풍부한", "진한", "달콤한", "바닐라향", "흙향", "과일향", "꽃향", "나무향", "스파이시",
+        "계피향", "곡물향", "피트향(석탄 소금 해조류)", "과실향", "스모크향", "아세톤향", "초콜릿향", "소금향",
+        "건과일향"
     };
 
     private String[][] whiskeyRecommendations = {
+    	{"Johnnie walker Black Label"},
         {"Glenfiddich 18 Year Old", "Jameson Irish Whiskey", "Glenlivet 12 Year Old"}, 
         {"Macallan Sherry Oak 12 Year Old", "Highland Park 18 Year Old"}, 
         {"Lagavulin 16 Year Old", "Talisker 10 Year Old"}, 
         {"Maker's Mark", "Chivasrigal 18 Year Old"}, 
-        {"Maker's Mark", "Chivasrigal 18 Year Old"}, 
+        {"Maker's Mark", "Chivasrigal 18 Year Old"},
+        {"Valentine12"},
+        {"Buffalo Trace"},
+        {"Wild Turkey"},
+        {"Ardbeg 10 year Old"},
+        {"Laphroaig 16 Year O1d"},
         {"Lagavulin 16 Year Old"}, 
-        {"Glenfiddich 18 Year Old", "Macallan Sherry Oak 12 Year Old"}, 
+        {"Glenfiddich 18 Year Old", "Macallan 12 Year Old"}, 
+        {"Ardbeg 10 year Old"},
         {"Glenfiddich 18 Year Old"}, 
         {"Talisker 10 Year Old"}, 
-        {"Talisker 10 Year Old"} 
+        {"Glenmorangie original"},
+        {"Glendronach 12 Year O1d"},
+        {"Glenlivet 12 Year O1d"}
     };
 
     public String recommendWhiskey(String selectedFlavor) {
