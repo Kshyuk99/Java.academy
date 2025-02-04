@@ -1,46 +1,102 @@
 package Portfolio;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 class Whiskey {
+    public static int num=0;
+    private int no;  //## 기본키 ( 구분자 )
     private String name;
     private List<String> flavors;
 
-    public Whiskey(String name, String... flavors) {
-        this.name = name;
+    public Whiskey() {}
+
+    // ## 관리자 위스키등록 
+    public Whiskey(String name, String[] flavors2) {
+        this.no = ++num;
+        this.name = name;        
         this.flavors = new ArrayList<>();
-        for (String flavor : flavors) {
+        for (String flavor : flavors2) {
             this.flavors.add(flavor);
         }
     }
+    
+   public Whiskey(String string, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+	}
 
-    public String getName() {
-        return name;
-    }
-
-    public List<String> getFlavors() {
-        return flavors;
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + ", Flavors: " + flavors;
-    }
+public Whiskey(String string, String string2) {
+	// TODO Auto-generated constructor stub
 }
 
+public Whiskey(String string, String string2, String string3, String string4) {
+	// TODO Auto-generated constructor stub
+}
+
+public Whiskey(String string, String string2, String string3, String string4, String string5) {
+	// TODO Auto-generated constructor stub
+}
+
+// ## setter 추가
+
+
+
+    
+
+	@Override public String toString() { return "Name: " + name + ", Flavors: " + flavors; }
+
+	public static int getNum() {
+		return num;
+	}
+
+	public static void setNum(int num) {
+		Whiskey.num = num;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<String> getFlavors() {
+		return flavors;
+	}
+
+	public void setFlavors(List<String> flavors) {
+		this.flavors = flavors;
+	}
+}
+
+
 public class WhiskeyRecommendation2 {
+    //// 0 
     private List<Whiskey> whiskeys = new ArrayList<>();
 
+    //// 1  create
     public void addWhiskey(Whiskey whiskey) {
         whiskeys.add(whiskey);
     }
+    //// 2-1 read : 전체위스키확인 
     public List<Whiskey> getAllWhiskeys() {
         return whiskeys;
     }
+    
+    //// 2-2 read : detail
     public Whiskey getWhiskeyByName(String name) {
         for (Whiskey whiskey : whiskeys) {
             if (whiskey.getName().equals(name)) {
@@ -49,15 +105,17 @@ public class WhiskeyRecommendation2 {
         }
         return null;
     }
-    public void updateWhiskey(String name, String... updatedFlavors) {
+    //// 3 update 화면보고.
+    public void updateWhiskey(String name,  List<String> flavors) {
         Whiskey whiskey = getWhiskeyByName(name);
         if (whiskey != null) {
-            whiskey.getFlavors().clear();
-            for (String flavor : updatedFlavors) {
+            whiskey.getFlavors().clear(); //???????
+            for (String flavor : flavors) {
                 whiskey.getFlavors().add(flavor);
             }
         }
     }
+    
     public void deleteWhiskey(String name) {
         whiskeys.removeIf(whiskey -> whiskey.getName().equals(name));
     }
@@ -82,25 +140,23 @@ public class WhiskeyRecommendation2 {
     }
     public static void main(String[] args) {
         WhiskeyRecommendation2 whiskeyRecommender = new WhiskeyRecommendation2();
-
-        whiskeyRecommender.addWhiskey(new Whiskey("Johnnie Walker Black Label", "스모크향", "곡물향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Glenfiddich 18 Year Old", "풍부한"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Lagavulin 16 Year Old", "진한"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Chivas Regal 18 Year Old", "바닐라향", "과실향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Maker's Mark", "바닐라향", "계피향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Valentine 12", "꿀향", "꽃향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Buffalo Trace", "계피향", "곡물향", "카라멜향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Wild Turkey", "곡물향", "카라멜향", "민트향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Lagavulin 16 Year Old", "피트향(석탄 소금 해조류)", "과실향", "스모크향", "아세톤향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Ardbeg 10 Year Old", "피트향(석탄 소금 해조류)", "스모크향", "초콜릿향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Laphroaig 16 Year Old", "피트향(석탄 소금 해조류)", "소금향", "스크램향", "아세톤향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Macallan 12 Year Old", "과실향", "건과일향", "스파이시향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Glendronach 12 Year Old", "스파이시향", "건포도향", "바닐라향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Glengoyne 12 Year Old", "스파이시향", "초콜릿향", "건과일향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Glenmorangie Original", "과실향", "바닐라향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Glenfiddich 12 Year Old", "과실향", "스파이시향", "꿀향"));
-        whiskeyRecommender.addWhiskey(new Whiskey("Glenlivet 12 Year Old", "과실향", "스파이시향", "바닐라향"));
-
+        
+        List<Whiskey> whiskeyList = Arrays.asList(new Whiskey("Johnnie Walker Black Label", "스모크향", "곡물향"),
+        										new Whiskey("Glenfiddich 18 Year Old", "풍부한"),
+        										new Whiskey("Lagavulin 16 Year Old", "진한"),
+        										new Whiskey("Chivas Regal 18 Year Old", "바닐라향", "과실향"),
+        										new Whiskey("Maker's Mark", "바닐라향", "계피향"),
+        										new Whiskey("Valentine 12", "꿀향", "꽃향"),
+        										new Whiskey("Buffalo Trace", "계피향", "곡물향", "카라멜향"),
+        										new Whiskey("Lagavulin 16 Year Old", "피트향(석탄 소금 해조류)", "과실향", "스모크향", "아세톤향"),
+        										new Whiskey("Ardbeg 10 Year Old", "피트향(석탄 소금 해조류)", "스모크향", "초콜릿향"),
+        										new Whiskey("Laphroaig 16 Year Old", "피트향(석탄 소금 해조류)", "소금향", "스크램향", "아세톤향"),
+        										new Whiskey("Macallan 12 Year Old", "과실향", "건과일향", "스파이시향"),
+        										new Whiskey("Glendronach 12 Year Old", "스파이시향", "건포도향", "바닐라향"),
+        										new Whiskey("Glengoyne 12 Year Old", "스파이시향", "초콜릿향", "건과일향"),
+        										new Whiskey("Glenmorangie Original", "과실향", "바닐라향"),
+        										new Whiskey("Glenfiddich 12 Year Old", "과실향", "스파이시향", "꿀향"),
+        										new Whiskey("Glenlivet 12 Year Old", "과실향", "스파이시향", "바닐라향") );               										
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -155,7 +211,7 @@ public class WhiskeyRecommendation2 {
                     name = sc.nextLine();
                     System.out.print("새로운 맛 (쉼표로 구분): ");
                     flavors = sc.nextLine().split(",");
-                    whiskeyRecommender.updateWhiskey(name, flavors);
+                    whiskeyRecommender.updateWhiskey(new Whiskey(name, flavors));
                     break;
                 case 5:
                     System.out.println("위스키 삭제");
@@ -180,4 +236,9 @@ public class WhiskeyRecommendation2 {
             }
         }
     }
+	private void updateWhiskey(Whiskey whiskey) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
