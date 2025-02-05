@@ -1,4 +1,4 @@
-package com.company.Portfolio;
+package Portfolio;
 
 
 import java.util.InputMismatchException;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        WhiskeyRecommendation2 whiskeyRecommender = new WhiskeyRecommendation2();
+        WhiskeyRecommendation3 whiskeyRecommender = new WhiskeyRecommendation3();
 
         whiskeyRecommender.addWhiskey(new Whiskey("Johnnie Walker Black Label", "스모크향", "곡물향"));
         whiskeyRecommender.addWhiskey(new Whiskey("Glenfiddich 18 Year Old", "풍부한"));

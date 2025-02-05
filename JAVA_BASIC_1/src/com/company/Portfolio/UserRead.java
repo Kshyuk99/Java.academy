@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class UserRead implements UserProcess{
-	@Override
-	public void exec(ArrayList<UserInfo> users) {
+	@Override public void exec(ArrayList<UserInfo> users) {
 		System.out.println("..........2. read");
-		Iterator<UserInfo> iter = users.iterator();
-		while(iter.hasNext()) {
-			UserInfo t = iter.next();
-			System.out.println(t.getName() + "\t" + t.getEmail());
+		Iterator <UserInfo>  iter= users.iterator();   //1)줄을 서시오
+		while(iter.hasNext()) {  //2)처리대상확인
+			UserInfo u= iter.next(); //3)꺼내오기
+			System.out.println( u.getNo() + "\t" + u.getName()+"\t"+ u.getEmail() + "\t"+ u.getDate());
 		}
 	}
-	
 }
