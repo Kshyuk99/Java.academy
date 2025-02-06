@@ -26,9 +26,9 @@ Q2. public > protected(extends) > package(default) > private
 public class Collection001 {
    public static void main(String[] args) {
 	       UserInfo [] arr = new UserInfo[]{ 
-	       	new UserInfo("아이언맨",50), 
+	       	new UserInfo("아이언맨",30), 
 	       	new UserInfo("헐크",40), 
-	       	new UserInfo("캡틴",120) , };       
+	       	new UserInfo("캡틴",80) , };       
 
 	       //##1. 데이터 입력   ( add, get, size, remove, contains)
 	       List<UserInfo> list = new ArrayList<>();
@@ -36,7 +36,8 @@ public class Collection001 {
 	       /*for(int i=0; i<arr.length; i++) {
 	    	   list.add(arr[i]);
 	       } */
-	        
+	       
+	       /*
 	       //##2. 데이터 출력
 	       System.out.println(list.get(0));
 	       //2-1. for + size (get)
@@ -44,13 +45,13 @@ public class Collection001 {
 	       for(int i=0; i<list.size(); i++) {
 	    	   UserInfo temp =list.get(i);
 	    	   System.out.println(temp.getName()+ "\t" + temp.getAge());
-	       }
-	       
+	       } */
+	       /*
 	       //2-2. 향상된 for
 	       System.out.println("\n\n= NAME\t AGE=");
 	       for( UserInfo temp : list) { //list에서 해당하는 자료형
 	    	   System.out.println(temp.getName()+ "\t" + temp.getAge());
-	       }
+	       } */
 	       
 	       //2-3. Iterator
 	       //1. 리스트모으기(iterator) //2. 처리대상확인(hasNext) //3. 데이터가져오기(next)

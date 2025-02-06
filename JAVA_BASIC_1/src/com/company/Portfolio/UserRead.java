@@ -12,4 +12,6 @@ public class UserRead implements UserProcess{
 			System.out.println( u.getNo() + "\t" + u.getName()+"\t"+ u.getEmail() + "\t"+ u.getDate());
 		}
 	}
+
+	@Override public void exec(ArrayList<UserInfo> users, UserView_crud crud) {   }
 }

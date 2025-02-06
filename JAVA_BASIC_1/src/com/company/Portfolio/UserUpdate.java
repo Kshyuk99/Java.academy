@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class UserUpdate implements UserProcess{
 	@Override public void exec(ArrayList<UserInfo> users) {
 		System.out.println("..........3. update");
@@ -20,5 +22,25 @@ public class UserUpdate implements UserProcess{
 			if(u.getNo() == no) {  u.setEmail(  email  ); break; }
 		} 
 		
+	}
+
+	@Override public void exec(ArrayList<UserInfo> users, UserView_crud crud) {
+		//1. 수정할 user번호 입력받기
+		int no = Integer.parseInt(JOptionPane.showInputDialog("수정할 번호 입력"));
+		//2. 수정할 user이메일 입력받기
+		String email = JOptionPane.showInputDialog("수정할 이메일 입력");
+		//3. model(저장소) - 해당번호의 데이터 찾아서 수정
+		int find = -1;  int cnt=0;
+		Iterator<UserInfo> iter = users.iterator(); //1. 줄세우기
+		while(iter.hasNext()) { //2. 해당데이터있는지 확인			
+			if(iter.next().getNo() == no) { find=cnt;  break; } //3. 꺼내와서 비교
+			cnt++;  // iterator는 index카운트 어려움
+		}
+		if(find==-1) {JOptionPane.showMessageDialog(null, "번호를 입력"); return;}
+		
+		users.get(cnt).setEmail(email);
+		
+		//4. view - 수정된 데이터 처리
+		crud.model.setValueAt(email, cnt, 2); // 어떤값을, 몇번째줄, 몇번째칸
 	}
 }

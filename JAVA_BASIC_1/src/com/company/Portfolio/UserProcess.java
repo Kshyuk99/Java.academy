@@ -3,7 +3,8 @@ package com.company.Portfolio;
 import java.util.ArrayList;
 
 public interface UserProcess {
-	public void exec(ArrayList<UserInfo> users);	
+	public void exec(ArrayList<UserInfo> users);
+	public void exec(ArrayList<UserInfo> users, UserView_crud crud);	
 }
 //UserCreate /   UserRead  / UserUpdate  / UserDelete
 /*
