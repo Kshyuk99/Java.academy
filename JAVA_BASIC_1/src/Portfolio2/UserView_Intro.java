@@ -32,7 +32,7 @@ public class UserView_Intro {
 	}	
 	
 	public void show() {
-		frame.setLayout(null); //1
+		frame.setLayout(null); 
 		frame.setResizable(false);
 		
 		label.setBounds(95,0,128,128);  

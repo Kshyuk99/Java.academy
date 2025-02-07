@@ -39,8 +39,8 @@ public class UserView_crud {
 			button[i].setFont(new Font( Font.SANS_SERIF , Font.ITALIC , 15));
 		}
 		
-		table.setBackground(new Color(255,200,200));  
-		table.setRowHeight(25);
+		table.setBackground(new Color(200,200,200));  
+		table.setRowHeight(30);
 		
 		table.getTableHeader().setReorderingAllowed(false); 
 		
@@ -58,7 +58,7 @@ public class UserView_crud {
 		frame.add(scroll, BorderLayout.CENTER);
 		frame.add(panel, BorderLayout.SOUTH);
 		for(int i=0; i<button.length; i++) {panel.add(button[i]);}		
-		frame.setSize(400,300);  frame.setVisible(true);  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(500,400);  frame.setVisible(true);  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}	
 
 	public static void main(String[] args) {new UserView_crud().show();  }

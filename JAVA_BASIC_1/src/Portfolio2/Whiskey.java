@@ -6,11 +6,18 @@ import java.util.List;
 
 class Whiskey {
     public static int num = 0;
-    private int no;
+    private static int no;
     private String name;
     private List<String> flavors;
 
-    public Whiskey(String name, List<String> flavors) {
+    public Whiskey(int no, String name, List<String> flavors) {
+		super();
+		this.no = no;
+		this.name = name;
+		this.flavors = flavors;
+	}
+	public Whiskey(String name, List<String> flavors) {
+		super();
         this.no = ++num;
         this.name = name;
         this.flavors = flavors;
@@ -18,23 +25,26 @@ class Whiskey {
         if (flavors != null && !flavors.isEmpty()) {
             for (String flavor : flavors) {
                 this.flavors.add(flavor);
+                
             }
         }
     }
 	public Whiskey() { super();  }
 
 
+	
+
+
+
+	
 	public Whiskey(String name2, String flavors2) {
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	public static int getNum() { return num; }
-    public int getNo() { return no; }
+    public static  int getNo() { return no; }
     public String getName() { return name; }
     public List<String> getFlavors() { return flavors; }
-    public static void setNum(int num) { Whiskey.num = num; }
+
     public void setNo(int no) { this.no = no; }
     public void setName(String name) { this.name = name; }
     public void setFlavors(List<String> flavors) { this.flavors = flavors; }

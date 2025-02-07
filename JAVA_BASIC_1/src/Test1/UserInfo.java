@@ -1,4 +1,4 @@
-package Test;
+package Test1;
 
 import java.util.Objects;
 
@@ -23,4 +23,4 @@ class UserInfo{
 		return age == other.age && Objects.equals(name, other.name);
 	}
 	   
-}//end class
+}

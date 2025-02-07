@@ -7,7 +7,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 
-public class UserDelete implements UserProcess {
+public class WhiskeyDelete implements WhiskeyProcess {
     @Override
     public void exec(ArrayList<Whiskey> whiskeys) {
         System.out.println("..........4. delete");
@@ -27,25 +27,16 @@ public class UserDelete implements UserProcess {
                     return;
                 }
             }
-        } catch (NumberFormatException e) { 
-            Iterator<Whiskey> iter = whiskeys.iterator();
-            while (iter.hasNext()) {
-                Whiskey whiskey = iter.next();
-                if (whiskey != null && whiskey.getName() != null && whiskey.getName().equals(input)) {
-                    iter.remove();
-                    System.out.println("위스키가 삭제되었습니다.");
-                    return;
-                }
-            }
-        }
+        } catch (Exception e) {  e.printStackTrace(); }
+            
+        
 
         System.out.println("해당 이름 또는 번호의 위스키를 찾을 수 없습니다.");
     }
-
+    
 	@Override
 	public void exec(ArrayList<Whiskey> users, UserView_crud crud) {
-		int no = Integer.parseInt(JOptionPane.showInputDialog("삭제할 번호 입력"));		
-		
+		int no = Integer.parseInt(JOptionPane.showInputDialog("삭제할 번호 입력"));			
 		
 		int find = -1;  int cnt=0;
 		Iterator<Whiskey> iter = users.iterator(); 
@@ -54,7 +45,6 @@ public class UserDelete implements UserProcess {
 			cnt++;  
 		}
 		if(find==-1) {JOptionPane.showMessageDialog(null, "번호를 확인"); return;}			
-		
 		
 		crud.model.removeRow(cnt);
 		

@@ -15,15 +15,15 @@ public class UserMain {
 	UserView_crud  crud;
 		
 	
-	UserProcess      controller;
-	UserProcess []   process;	
+	WhiskeyProcess      controller;
+	WhiskeyProcess []   process;	
 	
 	
 	public UserMain() {
 		users   = new ArrayList<Whiskey>();
 		intro   = new UserView_Intro();  intro.show();
 		crud    = new UserView_crud();    
-		process = new UserProcess[] { new UserCreate(), new UserRead(), new UserUpdate(), new UserDelete() }; 
+		process = new WhiskeyProcess[] { new WhiskeyCreate(), new WhiskeyRead(), new WhiskeyUpdate(), new WhiskeyDelete() }; 
 	}
 		
 	public void intro() {
@@ -50,6 +50,7 @@ public class UserMain {
 			@Override public void actionPerformed(ActionEvent e) {
 				controller = process[3];  controller.exec(users , crud); 		
 			}});
+		
 		crud.button[3].addActionListener(new ActionListener() { 
 			@Override public void actionPerformed(ActionEvent e) {
 				crud.frame.dispose(); 			
@@ -61,4 +62,4 @@ public class UserMain {
 	}
 
 	
-}
+} 

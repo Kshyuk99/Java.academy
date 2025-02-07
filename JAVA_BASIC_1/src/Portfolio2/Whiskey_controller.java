@@ -56,20 +56,20 @@ public class Whiskey_controller {
                 break;
             }
 
-            UserProcess controller = null;
+            WhiskeyProcess controller = null;
 
             switch (num) {
                 case create: 
-                    controller = new UserCreate();
+                    controller = new WhiskeyCreate();
                     break;
                 case read: 
-                    controller = new UserRead();
+                    controller = new WhiskeyRead();
                     break;
                 case update: 
-                    controller = new UserUpdate();
+                    controller = new WhiskeyUpdate();
                     break;
                 case delete: 
-                    controller = new UserDelete();
+                    controller = new WhiskeyDelete();
                     break;
                 default:
                     System.out.println(Error); 
