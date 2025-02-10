@@ -36,11 +36,11 @@ public class UserView_Intro {
 		frame.setResizable(false);
 		
 		label.setBounds(95,0,128,128);  
-		btns[0].setBounds(95,155 , 160,70);		
+		btns[0].setBounds(150,370 , 300,50);		
 		
 		frame.add(label); frame.add(btns[0]); 
-		frame.setSize(350, 350);  frame.setVisible(true);  
+		frame.setSize(600, 600);  frame.setVisible(true);  
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	public static void main(String[] args) { new UserView_Intro().show(); }
-}// end class
+}

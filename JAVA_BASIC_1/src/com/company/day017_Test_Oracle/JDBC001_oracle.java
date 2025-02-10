@@ -18,7 +18,7 @@ public class JDBC001_oracle {
 			//2. 데이터베이스 접속 (system/1234)
 			conn  = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",
 												"SCOTT",
-												"TIGER"); // ←
+												"tiger"); // ←
 			if(conn != null) {System.out.println("DB연동성공");}
 		} catch(Exception e) {e.printStackTrace();}
 		
