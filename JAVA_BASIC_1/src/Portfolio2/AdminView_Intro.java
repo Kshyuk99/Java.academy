@@ -22,7 +22,7 @@ public class AdminView_Intro {
 	public void show() {
 		frame.setLayout(null);
 		frame.setResizable(false);
-		btn[0].setBounds(150,370, 150,50);
+		btn[0].setBounds(220,370, 150,50);
 		frame.add(btn[0]);
 		frame.setSize(600, 600);  frame.setVisible(true);  
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

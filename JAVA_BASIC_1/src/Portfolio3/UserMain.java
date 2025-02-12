@@ -1,4 +1,4 @@
-package Portfolio2;
+package Portfolio3;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,20 +12,19 @@ public class UserMain {
 
     UserView_Intro intro;
     UserView_crud crud;
-    // 관리자 intro는 필요없음 
-    AdminView_crud crud2;
+    UserView_type type;
+    // 관리자 crud만들기
+   
 
     WhiskeyProcess controller;
-    WhiskeyProcess[] process;
+    WhiskeyProcess[] process; //WhiskeyProcess 배열 초기화
 
     public UserMain() {
         users = new ArrayList<Whiskey>();
         intro = new UserView_Intro();
-        intro.show();
-        
-        
+        intro.show();        
         crud = new UserView_crud();
-        crud2 = new AdminView_crud();
+        
         process = new WhiskeyProcess[] {
             new WhiskeyCreate(),
             new WhiskeyRead(),
@@ -74,8 +73,7 @@ public class UserMain {
             public void actionPerformed(ActionEvent e) {
                 crud.frame.dispose();
             }
-        });
-        
+        });        
     }
     
 
