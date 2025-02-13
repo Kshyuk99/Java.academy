@@ -8,11 +8,11 @@ import java.util.Arrays;
 public class UserMain {
 
     ArrayList<Whiskey> users;
-    ArrayList<Whiskey> admin;
+    //ArrayList<Whiskey> admin;
 
     UserView_Intro intro;
     UserView_crud crud;
-    UserView_type type;
+    //UserView_type type;
     // 관리자 crud만들기
    
 

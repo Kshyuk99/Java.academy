@@ -24,7 +24,11 @@ public class Whiskey {
     }
     public Whiskey() { super(); }
     public Whiskey(String name2, String flavors2) {  }
-    public int getNo() { return no; }
+    public Whiskey(int int1, String string, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getNo() { return no; }
     public String getName() { return name; }
     public List<String> getFlavors() { return flavors; }
     public void setNo(int no) { this.no = no; }
