@@ -8,12 +8,12 @@ import java.util.Arrays;
 public class UserMain {
 
     ArrayList<Whiskey> users;
-    ArrayList<Whiskey> admin;
+    
 
     UserView_Intro intro;
     UserView_crud crud;
-    // 관리자 intro는 필요없음 
-    AdminView_crud crud2;
+     
+    
 
     WhiskeyProcess controller;
     WhiskeyProcess[] process;
@@ -24,8 +24,7 @@ public class UserMain {
         intro.show();
         
         
-        crud = new UserView_crud();
-        crud2 = new AdminView_crud();
+        crud = new UserView_crud();        
         process = new WhiskeyProcess[] {
             new WhiskeyCreate(),
             new WhiskeyRead(),

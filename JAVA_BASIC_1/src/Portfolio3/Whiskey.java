@@ -24,33 +24,17 @@ public class Whiskey {
     }
     public Whiskey() { super(); }
     public Whiskey(String name2, String flavors2) {  }
-    public Whiskey(int int1, String string, String string2, String string3) {
-		// TODO Auto-generated constructor stub
-	}
-
+    public Whiskey(int int1, String string, String string2, String string3) {  }
 	public int getNo() { return no; }
     public String getName() { return name; }
     public List<String> getFlavors() { return flavors; }
     public void setNo(int no) { this.no = no; }
     public void setName(String name) { this.name = name; }
-    public void setFlavors(List<String> flavors) { this.flavors = flavors; }
-    
-    
-    public static int getNum() {
-		return num;
-	}
-
-	public static void setNum(int num) {
-		Whiskey.num = num;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
+    public void setFlavors(List<String> flavors) { this.flavors = flavors; }    
+    public static int getNum() { return num; }
+	public static void setNum(int num) { Whiskey.num = num; }
+	public String getType() { return type; }
+	public void setType(String type) { this.type = type; }
 
 	@Override
 	public String toString() {

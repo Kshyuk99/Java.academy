@@ -20,4 +20,10 @@ public class WhiskeyRead implements WhiskeyProcess {
     public void exec(ArrayList<Whiskey> users, UserView_crud crud) {
 
     }
+
+	@Override
+	public void exec(UserView_crud crud) {
+		// TODO Auto-generated method stub
+		
+	}
 }

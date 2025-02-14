@@ -18,7 +18,7 @@ public class WhiskeyDelete implements WhiskeyProcess {
             if (whiskey.getNo() == no) {
                 iter.remove();              
                 for (int j = 0; j < crud.model.getRowCount(); j++) {
-                    if ((int) crud.model.getValueAt(j, 1) == no) {
+                    if ((int) crud.model.getValueAt(j, 1) == no) {//#
                         crud.model.removeRow(j); 
                         JOptionPane.showMessageDialog(null, "위스키가 삭제되었습니다."); 
                         return; 
@@ -28,4 +28,9 @@ public class WhiskeyDelete implements WhiskeyProcess {
         }       
         JOptionPane.showMessageDialog(null, "번호를 확인하세요.");
     }
+	@Override
+	public void exec(UserView_crud crud) {
+		// TODO Auto-generated method stub
+		
+	}
 }

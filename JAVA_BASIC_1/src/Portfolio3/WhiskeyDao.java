@@ -1,12 +1,12 @@
 package Portfolio3;
 
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -19,6 +19,7 @@ public class WhiskeyDao {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, pw);
+			System.out.println("연동");
 		} catch (Exception e) { e.printStackTrace(); }
 		return conn;
 	}
@@ -31,8 +32,9 @@ public class WhiskeyDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getType());
 			pstmt.setString(2, user.getName());
-			pstmt.setArray(3, (Array) user.getFlavors());
-			result =pstmt.executeUpdate();
+//			String flavor = user.getFlavors().stream().collect();
+			pstmt.setString(3,  "test");
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {  e.printStackTrace(); 
 		}finally {
 			if(pstmt!=null) {try { pstmt.close(); } catch (SQLException e) {  e.printStackTrace(); }}
@@ -45,11 +47,13 @@ public class WhiskeyDao {
 		PreparedStatement pstmt = null;  ResultSet rset = null;
 		String sql = "select * from whiskey";
 		ArrayList<Whiskey> list = new ArrayList<Whiskey>();
+		List<String>flavors = new ArrayList<>();
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
+				flavors.add("fruit2");
 				list.add(
 					new Whiskey(rset.getInt("no"), rset.getString("type"), rset.getString("name"), rset.getString("flavors"))
 						);
@@ -59,20 +63,21 @@ public class WhiskeyDao {
 			if(rset !=null) { try { rset.close(); } catch (SQLException e) { e.printStackTrace(); } }
 			if(pstmt!=null) { try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); } }
 			if(conn !=null) { try { conn.close(); } catch (SQLException e) { e.printStackTrace(); } }
-		}
+		}//System.out.println(list);
 		return list;
 	}
 	//read
 	public Whiskey read(int no) {
 		PreparedStatement pstmt = null;  ResultSet rset = null;
 		String sql = "select * from whiskey where no=?";
+		List<String> flavors = new ArrayList<>();
 		Whiskey result = null;
 		try {
 			pstmt = conn.prepareStatement(sql);  
 			pstmt.setInt(1, no) ;  
 			rset  = pstmt.executeQuery(); 
-			while(rset.next()) { 
-				result = new Whiskey( rset.getInt("no") , rset.getString("type") , rset.getString("name") ,rset.getString("flavors")); //##
+			while(rset.next()) { flavors.add("abc");
+				result = new Whiskey( rset.getInt("no") , rset.getString("type") , rset.getString("name") ,rset.getString("flavors")); 
 			}
 		} catch (SQLException e) { 
 			e.printStackTrace();
@@ -92,7 +97,9 @@ public class WhiskeyDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getName()); 
-			pstmt.setArray(2, (Array) user.getFlavors());
+			
+			//pstmt.setString(2, flavor.toString());
+			pstmt.setString(2,"test");
 			pstmt.setInt(   3, user.getNo());     
 			
 			result = pstmt.executeUpdate();  
@@ -124,9 +131,16 @@ public class WhiskeyDao {
 	public static void main(String[] args) {
 		WhiskeyDao dao = new WhiskeyDao();
 //		//insert
-//		dao.getConnection();
-//		Whiskey user = new Whiskey(); user.setName("위스키"); user.setFlavors("위스키향");
-//		if(dao.insert(user) > 0) {System.out.println("위스키 추가");}
+		dao.getConnection();
+		Whiskey user = new Whiskey();
+		user.setName("위스키"); 
+		user.setType("WHITE");		
+		List<String>flavor = new ArrayList<>();
+		flavor.add("fruit");
+		user.setFlavors(flavor);
+		if(dao.insert(user) > 0) {System.out.println("위스키 추가");}
+		
+		
 		//readAll
 		dao.getConnection();
 		System.out.println(dao.readAll());
@@ -135,7 +149,11 @@ public class WhiskeyDao {
 //		System.out.println(dao.read(18));
 //		//update
 //		dao.getConnection();
-//		Whiskey user2 = new Whiskey(); user2.setNo(4); user2.setFlavors("위스키향2");
+//		Whiskey user2 = new Whiskey(); 
+//		user2.setNo(4);		
+//		List<String>flavor2 = new ArrayList<>();
+//		flavor2.add("fruit2");
+//		user2.setFlavors(flavor2);
 //		if(dao.update(user2) > 0) {System.out.println("수정");}
 //		//delete
 //		dao.getConnection();

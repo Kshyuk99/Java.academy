@@ -3,7 +3,7 @@ package Portfolio3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner; // Scanner 클래스 import
+import java.util.Scanner; 
 
 import javax.swing.JOptionPane;
 
@@ -30,11 +30,11 @@ public class WhiskeyCreate implements WhiskeyProcess {
 
     @Override
     public void exec(ArrayList<Whiskey> users, UserView_crud crud) {
-
-        int type = Integer.parseInt(JOptionPane.showInputDialog("type 1=RED , 2=WHITE> "));
+        
         String name = JOptionPane.showInputDialog("이름을 입력해주세요> ");
         String flavors = JOptionPane.showInputDialog("향을 입력해주세요> ");
-
+        //int type = Integer.parseInt(JOptionPane.showInputDialog("type 1=RED , 2=WHITE> "));
+        int type=1;
         Whiskey whiskey = new Whiskey(name, new ArrayList<>(Arrays.asList(flavors.split(","))), (type==1? "RED" : "WHITE"));
         users.add(whiskey);
         crud.whiskeys.add(whiskey);
@@ -44,4 +44,10 @@ public class WhiskeyCreate implements WhiskeyProcess {
         };
         crud.model.addRow(data);
     }
+
+	@Override
+	public void exec(UserView_crud crud) {
+		// TODO Auto-generated method stub
+		
+	}
 }
